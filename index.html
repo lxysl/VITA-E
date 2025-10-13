@@ -86,6 +86,93 @@
 </head>
 <body>
 
+<!-- 修复后的 Navbar 代码 -->
+<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: white; box-shadow: none; border-bottom: none;">
+  <div class="container">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start" style="margin-left: auto; margin-right: auto;">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <span style="margin-right: 5px;">🔥</span>
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/Tencent/VITA/tree/VITA-VLA" target="_blank">
+              <strong>VITA-VLA</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/VITA-MLLM/VITA" target="_blank">
+              <strong>VITA-1.5</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/VITA-MLLM/Long-VITA" target="_blank">
+              <strong>Long-VITA</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/VITA-MLLM/VITA-Audio" target="_blank">
+              <strong>VITA-Audio</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models" target="_blank">
+              <strong>MME</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/MME-Benchmarks/Video-MME" target="_blank">
+              <strong>Video-MME</strong>
+            </a>
+            <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models" target="_blank">
+              <strong>Awesome-MLLM</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 如果需要自定义样式，添加这个CSS -->
+<style>
+  /* 确保导航栏始终可见 - 白色背景，无边框 */
+  .navbar {
+    background-color: white;
+    min-height: 3.25rem;
+    box-shadow: none;
+    border: none;
+  }
+  
+  /* 确保 More Research 居中显示 */
+  .navbar-start {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  /* 下拉菜单样式 - 无边框 */
+  .navbar-dropdown {
+    border-top: none;
+    background-color: white;
+    box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+  }
+  
+  .navbar-item:hover {
+    background-color: #fafafa;
+  }
+  
+  .navbar-link:hover {
+    background-color: #fafafa;
+  }
+  
+  /* 移动端响应式 */
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+      background-color: white;
+      box-shadow: none;
+    }
+  }
+  </style>
 
 <section class="hero">
   <div class="hero-body">
@@ -95,30 +182,30 @@
           <h1 class="title is-1 publication-title">VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent Human-Robot Interaction</h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Xiaoyu Liu<sup>1</sup>,</span>
-            <span class="author-block">Chaoyou Fu<sup>1,†</sup>,</span>
-            <span class="author-block">Chi Yan<sup>2</sup>,</span>
-            <span class="author-block">Haihan Gao<sup>2</sup>,</span>
-            <span class="author-block">Yi-Fan Zhang<sup>3</sup>,</span>
-            <span class="author-block">Chu Wu<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://github.com/lxysl">Xiaoyu Liu</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://github.com/BradyFU">Chaoyou Fu</a><sup>1,†</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Chi_Yan2">Chi Yan</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Haihan_Gao1">Haihan Gao</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~YiFan_Zhang8">Yi-Fan Zhang</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Chu_Wu1">Chu Wu</a><sup>1</sup>,</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Shaoqi Dong<sup>1</sup>,</span>
-            <span class="author-block">Cheng Qian<sup>4</sup>,</span>
-            <span class="author-block">Bin Luo<sup>4</sup>,</span>
-            <span class="author-block">Xiuyong Yang<sup>4</sup>,</span>
-            <span class="author-block">Guanwu Li<sup>4</sup>,</span>
-            <span class="author-block">Yusheng Cai<sup>4</sup>,</span>
+            <span class="author-block"><a href="https://github.com/ltBai">Shaoqi Dong</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Cheng_Qian8">Cheng Qian</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Bin_Luo15">Bin Luo</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Yangxiuyong1">Xiuyong Yang</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~guanwuli1">Guanwu Li</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://openreview.net/profile?id=~Yusheng_Cai1">Yusheng Cai</a><sup>4</sup>,</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Yunhang Shen<sup>2</sup>,</span>
-            <span class="author-block">Deqiang Jiang<sup>2</sup>,</span>
-            <span class="author-block">Haoyu Cao<sup>2,‡</sup>,</span>
-            <span class="author-block">Xing Sun<sup>2</sup>,</span>
-            <span class="author-block">Caifeng Shan<sup>1</sup>,</span>
-            <span class="author-block">Ran He<sup>3</sup></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=29teR74AAAAJ&hl=zh-CN&oi=ao">Yunhang Shen</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=v4AK2MQAAAAJ">Deqiang Jiang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=LV8ejn8AAAAJ">Haoyu Cao</a><sup>2,‡</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=IUtix9IAAAAJ">Xing Sun</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=fIXA_SsAAAAJ">Caifeng Shan</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=ayrg9AUAAAAJ">Ran He</a><sup>3</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
