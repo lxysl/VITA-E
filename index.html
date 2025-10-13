@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent Human-Robot Interaction.">
+  <meta name="keywords" content="VITA-E, VLA, Human-Robot Interaction, Embodied AI, Vision-Language-Action">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent HRI</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/vita-e-logo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .pill {
+      display: inline-block;
+      background: #e6f6fd;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .kpi {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .kpi .item {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      font-size: 14px;
+    }
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .token-table th,
+    .token-table td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .token-table th {
+      background: #f8fafc;
+      font-weight: 600;
+    }
+    .token-table code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent Human-Robot Interaction</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Xiaoyu Liu<sup>1</sup>,</span>
+            <span class="author-block">Chaoyou Fu<sup>1,†</sup>,</span>
+            <span class="author-block">Chi Yan<sup>2</sup>,</span>
+            <span class="author-block">Haihan Gao<sup>2</sup>,</span>
+            <span class="author-block">Yi-Fan Zhang<sup>3</sup>,</span>
+            <span class="author-block">Chu Wu<sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Shaoqi Dong<sup>1</sup>,</span>
+            <span class="author-block">Cheng Qian<sup>4</sup>,</span>
+            <span class="author-block">Bin Luo<sup>4</sup>,</span>
+            <span class="author-block">Xiuyong Yang<sup>4</sup>,</span>
+            <span class="author-block">Guanwu Li<sup>4</sup>,</span>
+            <span class="author-block">Yusheng Cai<sup>4</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Yunhang Shen<sup>2</sup>,</span>
+            <span class="author-block">Deqiang Jiang<sup>2</sup>,</span>
+            <span class="author-block">Haoyu Cao<sup>2,‡</sup>,</span>
+            <span class="author-block">Xing Sun<sup>2</sup>,</span>
+            <span class="author-block">Caifeng Shan<sup>1</sup>,</span>
+            <span class="author-block">Ran He<sup>3</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Nanjing University,</span>
+            <span class="author-block"><sup>2</sup>Tencent Youtu Lab,</span>
+            <span class="author-block"><sup>3</sup>CASIA,</span>
+            <span class="author-block"><sup>4</sup>Fourier Intelligence Inc.</span>
+          </div>
+
+          <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
+            <span class="author-block"><sup>†</sup>Corresponding author,</span>
+            <span class="author-block"><sup>‡</sup>Project leader</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Arxiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/VITA-MLLM/VITA-E"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <!-- <div style="margin-top: 1.5rem;">
+            <span class="pill">Real-time</span>
+            <span class="pill">Interruptible</span>
+            <span class="pill">Concurrency</span>
+            <span class="pill">Model-as-Controller</span>
+            <span class="pill">VLM + Diffusion Action Expert</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Demo Video -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" controls muted loop playsinline height="100%">
+        <source src="./static/videos/VITA-E.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1.5rem;">
+        <b>VITA-E</b> enables real-time, interruptible, and concurrent human-robot interaction through a dual-model framework.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Current Vision-Language-Action (VLA) models are often constrained by a rigid, static interaction paradigm, limiting their ability to handle real-time user interruptions or perform concurrent tasks such as speaking while acting. This hinders seamless human-robot collaboration, resulting in an inflexible and unresponsive user experience. To address these limitations, we introduce <b>VITA-E</b>, a novel dual-model framework designed to enable flexible and robust human-robot interaction in real-time. The core of our approach is a dual-model architecture where two parallel VLA instances operate as an "Active Model" and a "Listening Model", allowing one to instantly intervene in the other. We further propose a <b>"model-as-controller"</b> paradigm, where we fine-tune the VLM to generate special tokens that serve as direct system-level commands, coupling the model's reasoning with the system's behavior. Experiments conducted on a physical humanoid robot demonstrate that VITA-E can reliably handle complex interactive scenarios. Our framework is compatible with various dual-system VLA models, achieving a <b>100%</b> success rate on emergency stops and speech interruptions while also successfully performing concurrent speech and action. This represents a significant step towards more natural and capable robotic assistants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- System Architecture -->
+<section class="hero teaser">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <h2 class="title is-3 mb-5">System Architecture</h2>
+      <div style="width:85%; margin:0 auto;">
+        <img src="static/images/architecture.png" style="width:100%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem;">
+          <b>Architecture:</b> VITA-E follows two principles: <b>VLM-as-controller</b> and a <b>dual-model core</b>. The VLM (System-2) handles high-level understanding, while a diffusion-based action expert (System-1) handles low-level motor control. The first token controls the system state: <code>[RES]</code> for voice-only response, <code>[ACT]</code> to enter action mode with the instruction after <code>[INST]</code> as the semantic goal, <code>[HALT]</code> for immediate stop, and <code>[END]</code> for task completion. The Listening model can preempt or run concurrently at any time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Interaction Modes -->
+<section class="hero teaser">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <h2 class="title is-3 mb-5">Interaction Modes</h2>
+      <div style="width:85%; margin:0 auto;">
+        <img src="static/images/logic.png" style="width:100%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem;">
+          <b>Interaction modes:</b> speech interruption, concurrent speech+action, task switching, and emergency stop.
+        </p>
+      </div>
+      <!-- KPIs -->
+      <div class="kpi">
+        <div class="item"><b>Speech interruption</b>: 100%</div>
+        <div class="item"><b>Emergency stop</b>: 100%</div>
+        <div class="item"><b>Task switching</b>: 93.3%</div>
+        <div class="item"><b>Avg. voice response latency</b>: 2.26s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Key Features -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Features</h2>
+        <div style="margin-top: 1rem;">
+          <span class="pill">Dual-model interaction core</span>
+          <span class="pill">Special control tokens</span>
+          <span class="pill">Speech-action concurrency</span>
+          <span class="pill">Unified interruption mechanism</span>
+          <span class="pill">Compatible with mainstream VLAs</span>
+        </div>
+
+        <!-- Special Tokens Table -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Special Control Tokens</h3>
+        <div class="content">
+          <table class="token-table">
+            <thead>
+              <tr>
+                <th style="width: 100px">Token</th>
+                <th style="width: 40%">Description</th>
+                <th>Example Model Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>[RES]</code></td>
+                <td>Signals a voice-only response. Generated as the first token for conversational replies.</td>
+                <td><code>[RES]</code> I see an apple on the table.</td>
+              </tr>
+              <tr>
+                <td><code>[ACT]</code></td>
+                <td>Signals that the response includes a physical action. Generated as the first token to enter action mode.</td>
+                <td><code>[ACT]</code> Okay, I will put the toy in the box. <code>[INST]</code> Pick up toy and place in box.</td>
+              </tr>
+              <tr>
+                <td><code>[INST]</code></td>
+                <td>Delimits the spoken part of an action response from the internal action instruction that follows.</td>
+                <td>Used after <code>[ACT]</code> to separate speech from the action instruction.</td>
+              </tr>
+              <tr>
+                <td><code>[HALT]</code></td>
+                <td>Commands an immediate stop of the current action. Generated as the first token for emergency stops.</td>
+                <td><code>[HALT]</code> Stopping immediately.</td>
+              </tr>
+              <tr>
+                <td><code>[END]</code></td>
+                <td>Signals that a multi-step action sequence has been successfully completed.</td>
+                <td><code>[END]</code> The action is finished.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Experiments -->
+<section class="hero teaser">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <h2 class="title is-3 mb-5">Experiments</h2>
+      <div style="width:80%; margin:0 auto;">
+        <p class="has-text-justified is-size-6" style="margin-bottom:1.5rem;">
+          We evaluate on the Fourier GR2 humanoid platform and the LIBERO benchmark. VITA-E is competitive on fundamental pick-and-place tasks and reliably delivers concurrency, interruption, and emergency stop in interactive scenarios.
+        </p>
+        
+        <img src="static/images/results.png" style="width:100%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem; margin-bottom:2.5rem;">
+          <b>Comparison on two manipulation tasks:</b> success rates over 30 trials.
+        </p>
+
+        <img src="static/images/libero.png" style="width:100%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem;">
+          <b>LIBERO benchmark:</b> competitive performance with frozen VLM.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liu2025vitae,
+  title={VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent Human-Robot Interaction},
+  author={Liu, Xiaoyu and Fu, Chaoyou and Yan, Chi and Gao, Haihan and Zhang, Yi-Fan and Wu, Chu and Dong, Shaoqi and Qian, Cheng and Luo, Bin and Yang, Xiuyong and Li, Guanwu and Cai, Yusheng and Shen, Yunhang and Jiang, Deqiang and Cao, Haoyu and Sun, Xing and Shan, Caifeng and He, Ran},
+  journal={arXiv preprint arXiv:2510.XXXXX},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            © 2025 VITA Team.
+          </p>
+          <p>
+            This website is built using the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, 
+            licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
