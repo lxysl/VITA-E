@@ -2,11 +2,11 @@
 
 This is the repository that contains source code for the VITA-E project website.
 
-**VITA-E: A Dual-Model Framework for Real-Time, Interruptible, and Concurrent Human-Robot Interaction**
+**VITA-E: Natural Human-Robot Interaction with Concurrent Seeing, Hearing, Speaking, and Acting**
 
 ## About
 
-VITA-E is a novel dual-model framework designed to enable flexible and robust human-robot interaction in real-time. The framework addresses the limitations of current Vision-Language-Action (VLA) models that struggle with real-time interruptions and concurrent task execution.
+VITA-E breaks through the rigid interaction paradigm of current Vision-Language-Action models with a dual-model architecture that enables robots to simultaneously see, hear, speak, and act while handling real-time user interruptions—mimicking human-like multitasking. Demonstrated on physical humanoid robots with 100% success rates on critical interruption tasks, VITA-E represents a fundamental leap toward natural, responsive robotic assistants that truly collaborate with humans in complex, dynamic scenarios.
 
 ## Website License
 
