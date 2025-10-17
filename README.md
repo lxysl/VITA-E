@@ -2,7 +2,7 @@
 
 This is the repository that contains source code for the VITA-E project website.
 
-**VITA-E: Natural Human-Robot Interaction with Concurrent Seeing, Hearing, Speaking, and Acting**
+**VITA-E: Natural Embodied Interaction with Concurrent Seeing, Hearing, Speaking, and Acting**
 
 ## About
 
